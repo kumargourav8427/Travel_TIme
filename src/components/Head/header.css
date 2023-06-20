@@ -1,0 +1,12 @@
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.logo img{
+    height: 80px;
+    width: 90px;
+}
+.search{
+    font-size: 25px;
+    padding: 10px;
+}
