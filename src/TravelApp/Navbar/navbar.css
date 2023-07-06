@@ -1,0 +1,11 @@
+.me-auto{
+    margin-left: 150px;
+}
+.me-auto a{
+    text-decoration: none;
+    color: rgb(77, 75, 75);
+    padding: 0px 8px ;
+}
+.me-auto a:hover{
+    color: black;
+}

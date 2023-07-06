@@ -1,0 +1,32 @@
+#banner {
+    background-image: url('city.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.banner-title h1 {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 10px;
+    margin: 0px;
+}
+
+.banner-title {
+    padding-top: 3rem;
+}
+
+.section-2 {
+    box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding: 0px 10px;
+    position: absolute;
+    left: 100px;
+    top:680px;
+    z-index: 1;
+    background-color: #FFFFFF;
+}
+@media (max-width:780px)  {
+    .section-2{
+        display: none;
+    }
+}
