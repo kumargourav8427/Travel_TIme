@@ -1,77 +1,96 @@
-import React from 'react'
-import './navbar.css'
-import logo from './logo.jpg'
-import { MdFlight } from 'react-icons/md'
-import { FaHotel, FaTrain, FaBus } from 'react-icons/fa'
-import { LuBus } from 'react-icons/lu'
-import { ImHome } from 'react-icons/im'
-import { RiArrowDownSLine } from 'react-icons/ri'
+import React from "react";
+import "./navbar.css";
+import logo from "./navbar-logo.PNG";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
-import myicon from './myicon.PNG'
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { NavLink } from 'react-router-dom'
+import offer from "./offer-icon.PNG";
+import mybiz from "./my-biz.PNG";
+import travelicon from "./travel-icon.PNG";
+import { FiChevronDown } from "react-icons/fi";
+import { AiOutlineUserAdd } from "react-icons/ai";
+import indflag from "./india.png";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="/"><img src={logo} alt='logo' />
+    <Navbar expand="lg" className="navbar1 " id="navbar">
+      <Container fluid  className="px-5">
+        <Navbar.Brand >
+          <NavLink to="/">
+          <img src={logo} alt="logo" />
+          </NavLink>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0 px-5"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <NavLink to="/" class="nav-link active">
-              <span className='nav-icons'><MdFlight /></span>Flight</NavLink>
-            <NavLink to="/hotels" class="nav-link active">
-              <span className='nav-icons'><FaHotel /></span>Hotels</NavLink>
-            <NavLink to="/trains" class="nav-link active">
-              <span className='nav-icons'><FaTrain /></span>Trains</NavLink>
-            <NavLink to="/buses" class="nav-link active">
-              <span className='nav-icons'><FaBus /></span>Buses</NavLink>
-            <NavLink to="/cabs" class="nav-link active">
-              <span className='nav-icons'><LuBus /></span>Cabs</NavLink>
-            <NavLink to="/homestays" class="nav-link active">
-              <span className='nav-icons'><ImHome /></span>HomeStays</NavLink>
-          </Nav>
-          <Form className="d-flex login-and-create">
-            <div className='mx-2'>
-              <span>Country</span><br />
-              <select className=''>
-                <option>Select<RiArrowDownSLine /></option>
-                <option>IND</option>
-                <option>ASE</option>
-                <option>UAE</option>
-              </select>
-            </div>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-white" />
+        <Navbar.Collapse id="basic-navbar-nav " className="justify-end">
+          <Nav className="d-flex align-items-center gap-2  ">
+            <NavLink to="#">
+              <div className="text-white border-right">
+                <p className="d-flex">
+                  <span className="">
+                    <img src={offer} alt="" />
+                  </span>
+                  <span className="font12 fontweight_600">
+                    Super Offers <br />
+                    <span className="font10">Explore great deals & offers</span>
+                  </span>
+                </p>
+              </div>
+            </NavLink>
 
-            <div className='mx-2'>
-              <span>Language</span><br />
-              <select className='select'>
-                <option>Select<RiArrowDownSLine /></option>
-                <option>English</option>
-                <option>Hindi</option>
-                <option>Punjabi</option>
-              </select>
-            </div>
-            
-            <div>
-              <Button variant="outline-success">
-                <img src={myicon} alt='' />
-                <span>Login and <br />Create Account</span>
-              </Button>
-            </div>
-          </Form>
+            <NavLink to="#">
+              <div className="text-white  border-right">
+                <p className="d-flex">
+                  <span className="">
+                    <img src={mybiz} alt="" />
+                  </span>
+                  <span className="font12 fontweight_600">
+                    Introducing myBiz
+                    <br />
+                    <span className="font10">Business Travel Solution</span>
+                  </span>
+                </p>
+              </div>
+            </NavLink>
+
+            <NavLink to="#">
+              <div className="text-white ">
+                <p className="d-flex">
+                  <span className="p-1 mx-1">
+                    <img src={travelicon} alt="" />
+                  </span>
+                  <span className="font12 fontweight_600">
+                    My Trips
+                    <br />
+                    <span className="font10">Manage your bookings</span>
+                  </span>
+                </p>
+              </div>
+            </NavLink>
+
+            <NavLink to="/loginSignup">
+              <div className="logincreate appendNavbrTop">
+                <AiOutlineUserAdd className="fs-5 text-white" />
+                <span className="mx-2 text-white font-12 ">
+                  Login or Create account
+                </span>{" "}
+                <FiChevronDown className="fs-5 text-white" />
+              </div>
+            </NavLink>
+
+            <NavLink to="#">
+              <div className="text-white appendNavbrTop bg-dark text-center rounded p-2">
+                <span>
+                  <img src={indflag} alt="" height="15px" />
+                </span>
+                <span className="font12">IN|ENG|INR <FiChevronDown className="fs-5"/></span>
+              </div>
+            </NavLink>
+          </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar >
+    </Navbar>
   );
 }
 
